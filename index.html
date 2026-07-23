@@ -85,7 +85,7 @@ footer{text-align:center;color:var(--muted);font-size:12px;padding:20px;}
 
   <div class="panel">
     <h2>✍️ Modelo da mensagem</h2>
-    <textarea id="tpl">Olá, {saudacao}! Aqui é da Rocha Decor Espumas, aqui em Londrina. Vi a {nome} em {bairro}, {cidade} e queria já te passar nossos preços de espuma PRORELAX direto de fábrica, bem abaixo do mercado:
+    <textarea id="tpl">Olá, {saudacao}! Aqui é da Rocha Decor Espumas, aqui em Londrina. Vi a {nome} em {bairro}{cidade} e queria já te passar nossos preços de espuma PRORELAX direto de fábrica, bem abaixo do mercado:
 
 *Espuma D33* (manta 200x300x2cm): R$165
 *Espuma D26* (manta 200x300x2cm): R$120
@@ -127,7 +127,7 @@ function render_msg(tpl,l){
   return tpl
     .replace(/{nome}/g,l.nome||'')
     .replace(/{cidade}/g,l.cidade||'sua cidade')
-    .replace(/{bairro}/g,l.bairro||'')
+    .replace(/{bairro}/g,l.bairro?l.bairro+', ':'')
     .replace(/{categoria}/g,(l.categoria||'estofados').toLowerCase())
     .replace(/{saudacao}/g,'tudo bem');
 }
