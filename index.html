@@ -73,14 +73,24 @@ input[type=search]{flex:1;min-width:180px;border:1px solid var(--line);border-ra
 .bulk button{background:var(--graphite);color:#fff;border:none;padding:8px 14px;border-radius:6px;cursor:pointer;font-size:13px;font-weight:600;}
 footer{text-align:center;color:var(--muted);font-size:12px;padding:20px;}
 .empty{text-align:center;color:var(--muted);padding:40px;grid-column:1/-1;}
+.page-nav{display:flex;align-items:center;justify-content:center;gap:8px;margin:0 0 18px;flex-wrap:wrap;}
+.page-nav .label{color:var(--muted);font-size:12px;margin-right:4px;text-transform:uppercase;letter-spacing:.5px;}
+.page-link{min-width:104px;background:var(--card);border:1px solid var(--line);border-radius:6px;color:var(--graphite2);font-family:'Oswald',system-ui,sans-serif;font-size:13px;font-weight:600;letter-spacing:.2px;padding:9px 14px;text-align:center;text-decoration:none;transition:.15s;}
+.page-link:hover{border-color:var(--rust);color:var(--rust-dk);transform:translateY(-1px);}
+.page-link.active{background:var(--graphite);border-color:var(--graphite);color:#fff;border-bottom:3px solid var(--rust);pointer-events:none;}
 </style>
 </head>
 <body>
 <header>
   <h1><span class="logo">ROCHA DECOR ESPUMAS</span> Central de Prospecção — Tapeçarias de Londrina</h1>
-  <p>Espumas direto de fábrica · 100 leads captados via Google Maps · disparo personalizado por WhatsApp</p>
+  <p>Espumas direto de fábrica · 100 leads captados via Google Maps · disparo personalizado por WhatsApp · página 1 de 2</p>
 </header>
 <div class="wrap">
+  <nav class="page-nav" aria-label="Navegação entre páginas de leads">
+    <span class="label">Lista de leads</span>
+    <a class="page-link active" href="index.html" aria-current="page">Página 1</a>
+    <a class="page-link" href="index2.html">Página 2 →</a>
+  </nav>
   <div class="stats" id="stats"></div>
 
   <div class="panel">
@@ -213,7 +223,7 @@ function card(l){
   if(l.telefone) contacts.push(`<a href="tel:${(l.telefone||'').replace(/\D/g,'')}">📞 ${l.telefone}</a>`);
   if(l.email) contacts.push(`<a href="mailto:${l.email}">✉️ e-mail</a>`);
   if(l.instagram) contacts.push(`<a href="${l.instagram}" target="_blank">📷 Instagram</a>`);
-  if(l.maps) contacts.push(`<a href="${l.maps}" target="_blank">📍 Maps</a>`);
+  if(l.maps||l.url_maps) contacts.push(`<a href="${l.maps||l.url_maps}" target="_blank">📍 Maps</a>`);
   let act='';
   if(l.wpp_num){
     act=`<button class="btn btn-wpp" data-act="wpp">💬 Enviar WhatsApp</button>
