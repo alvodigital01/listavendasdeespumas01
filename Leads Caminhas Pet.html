@@ -1,0 +1,225 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Leads Caminhas Pet</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..100,500..800&family=Public+Sans:wght@400;500;600&display=swap">
+<style>
+/* Layout: barra de ferramentas fixa no topo, grade de cards de lead abaixo */
+:root{
+  --bg:#eef0ec; --surface:#ffffff; --ink:#1d2422; --muted:#5d6763; --line:#d5dad5;
+  --accent:#1f5a52; --accent-ink:#ffffff; --foam:#f2d36b; --foam-ink:#3d3209;
+  --wa:#1c8a4a; --sent:#e3e7e3;
+  --display:"Archivo",ui-sans-serif,system-ui,sans-serif;
+  --body:"Public Sans",ui-sans-serif,system-ui,sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#141917; --surface:#1d2421; --ink:#e7ece9; --muted:#9aa6a1; --line:#2f3935;
+  --accent:#6fc2b3; --accent-ink:#0d1a17; --foam:#e7c654; --foam-ink:#2a2105;
+  --wa:#3fbf73; --sent:#232b28; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#141917; --surface:#1d2421; --ink:#e7ece9; --muted:#9aa6a1; --line:#2f3935;
+  --accent:#6fc2b3; --accent-ink:#0d1a17; --foam:#e7c654; --foam-ink:#2a2105;
+  --wa:#3fbf73; --sent:#232b28; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:15px;line-height:1.5;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:0 48px}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
+.wrap{max-width:1180px;margin:0 auto}
+header{padding-block:28px 18px;display:flex;flex-wrap:wrap;gap:12px 32px;align-items:flex-end;justify-content:space-between}
+h1{font-family:var(--display);font-stretch:80%;font-weight:800;font-size:clamp(28px,5vw,44px);line-height:1;margin:0;letter-spacing:-.01em;text-wrap:balance}
+.sub{color:var(--muted);margin:8px 0 0;max-width:62ch}
+.stats{display:flex;gap:20px;font-variant-numeric:tabular-nums}
+.stat b{display:block;font-family:var(--display);font-stretch:80%;font-size:28px;line-height:1}
+.stat span{font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);padding-block:10px;border-bottom:1px solid var(--line);
+  display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.bar input[type=search],.bar select{font:inherit;color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:8px 10px;min-width:0}
+.bar input[type=search]{flex:1 1 220px}
+.bar select{flex:0 1 190px}
+.bar label{display:flex;gap:6px;align-items:center;font-size:14px;color:var(--muted);white-space:nowrap}
+button,.btn{font:inherit;font-weight:600;font-size:14px;border-radius:6px;padding:8px 12px;cursor:pointer;border:1px solid var(--line);background:var(--surface);color:var(--ink);text-decoration:none;display:inline-flex;align-items:center;gap:6px;justify-content:center}
+button:focus-visible,.btn:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.btn-primary{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.btn-wa{background:var(--wa);border-color:var(--wa);color:#fff}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:14px;margin-top:16px}
+@media (max-width:420px){.grid{grid-template-columns:1fr}}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:16px;display:flex;flex-direction:column;gap:10px;min-width:0}
+.card.sent{background:var(--sent)}
+.card.sent .msg{opacity:.6}
+.top{display:flex;gap:10px;align-items:flex-start;justify-content:space-between}
+.name{font-family:var(--display);font-stretch:88%;font-weight:700;font-size:19px;line-height:1.15;margin:0;text-wrap:balance;min-width:0;overflow-wrap:anywhere}
+.rank{font-variant-numeric:tabular-nums;color:var(--muted);font-size:12px;white-space:nowrap}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{font-size:12px;font-weight:600;padding:2px 8px;border-radius:999px;border:1px solid var(--line);color:var(--muted)}
+.chip.type{background:var(--foam);border-color:var(--foam);color:var(--foam-ink);text-transform:uppercase;letter-spacing:.05em}
+.chip.done{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+dl{display:grid;grid-template-columns:auto 1fr;gap:2px 12px;margin:0;font-size:14px}
+dt{color:var(--muted)}
+dd{margin:0;min-width:0;overflow-wrap:anywhere;font-variant-numeric:tabular-nums}
+dd a{color:var(--accent)}
+.note{font-size:13px;color:var(--muted);margin:0}
+.msg{font-size:14px;background:var(--bg);border:1px solid var(--line);border-radius:6px;padding:10px;margin:0;white-space:pre-wrap;min-width:0;overflow-wrap:anywhere}
+.actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:auto}
+.actions>*{flex:1 1 auto}
+.empty{padding:48px 0;text-align:center;color:var(--muted)}
+.toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--ink);color:var(--bg);padding:8px 14px;border-radius:6px;font-size:14px}
+#csvBox{width:100%;min-height:140px;font:12px/1.4 ui-monospace,monospace;margin-top:10px;background:var(--surface);color:var(--ink);border:1px solid var(--line);border-radius:6px;padding:8px}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+
+<div class="wrap">
+  <header>
+    <div>
+      <h1>Leads Caminhas Pet</h1>
+      <p class="sub">Fabricantes e confecções de caminhas e produtos pet num raio de 200 km de Londrina, para a Rocha Decor Espumas oferecer espuma em placa e sob medida, manta acrílica, tecidos e enchimentos. Dados do Google Maps via Apify, só celular, ordenados por número de avaliações.</p>
+    </div>
+    <div class="stats">
+      <div class="stat"><b id="sTotal">0</b><span>leads</span></div>
+      <div class="stat"><b id="sShown">0</b><span>na tela</span></div>
+      <div class="stat"><b id="sSent">0</b><span>enviados</span></div>
+    </div>
+  </header>
+
+  <div class="bar" role="search">
+    <input type="search" id="q" placeholder="Buscar empresa, cidade, categoria" aria-label="Buscar">
+    <select id="fCity" aria-label="Filtrar por cidade"><option value="">Todas as cidades</option></select>
+    <select id="fType" aria-label="Filtrar por tipo"><option value="">Todos os tipos</option></select>
+    <label><input type="checkbox" id="hideSent"> Ocultar enviados</label>
+    <button id="exportBtn" class="btn-primary" type="button">Exportar CSV</button>
+  </div>
+  <div id="csvWrap" hidden>
+    <p class="note">Não deu pra baixar o arquivo aqui. O CSV está abaixo e já foi copiado, é só colar numa planilha.</p>
+    <textarea id="csvBox" readonly aria-label="CSV"></textarea>
+  </div>
+
+  <div class="grid" id="grid"></div>
+  <p class="empty" id="empty" hidden>Nenhum lead com esses filtros.</p>
+</div>
+
+<script>
+const LEADS = [{"id": "ChIJ___Lg_WWkpQRvYOELpu4FQk", "empresa": "PetCão", "cidade": "Paranavaí", "tipo": "Fábrica", "whatsapp": "44998921713", "nota": 4.9, "avaliacoes": 39, "categoria": "Fabricante", "site": "https://petcao.com/", "instagram": "https://www.instagram.com/petcao", "obs": "", "mensagem": "Olá, tudo bem? Aqui é o Nicolas, da Rocha Decor Espumas, aqui de Londrina. Vi o trabalho de vocês, da PetCão, aí em Paranavaí, e queria saber se vocês compram espuma e material de tapeçaria pra produção das caminhas e produtos pet.\n\nTrabalho com espuma em placa e cortada sob medida, manta acrílica, tecidos e enchimentos. Entrego na região e faço preço de fábrica pra quem compra em volume.\n\nHoje vocês compram de qual fornecedor?"}, {"id": "ChIJAQAs6t_W7JQRRUyKGtfGO98", "empresa": "FreeFaro", "cidade": "Maringá", "tipo": "Fábrica", "whatsapp": "44991694747", "nota": 4.5, "avaliacoes": 30, "categoria": "Fabricante", "site": "http://www.freefaro.com.br/", "instagram": "https://www.instagram.com/freefaropet", "obs": "", "mensagem": "Olá, tudo bem? Aqui é o Nicolas, da Rocha Decor Espumas, aqui de Londrina. Vi o trabalho de vocês, da FreeFaro, aí em Maringá, e queria saber se vocês compram espuma e material de tapeçaria pra produção das caminhas e produtos pet.\n\nTrabalho com espuma em placa e cortada sob medida, manta acrílica, tecidos e enchimentos. Entrego na região e faço preço de fábrica pra quem compra em volume.\n\nHoje vocês compram de qual fornecedor?"}, {"id": "ChIJ_57o20qn7JQRzvbdgT2pA1c", "empresa": "Efeito Pet - Acessórios Premium para Pets", "cidade": "Rolândia", "tipo": "Ateliê", "whatsapp": "41999543750", "nota": 5, "avaliacoes": 7, "categoria": "Loja de artigos de couro", "site": "http://www.efeitopet.com/", "instagram": null, "obs": "Ateliê de acessórios premium, linha em couro. Confirmar se faz caminha.", "mensagem": "Olá, tudo bem? Aqui é o Nicolas, da Rocha Decor Espumas, aqui de Londrina. Vi o trabalho de vocês, da Efeito Pet, aí em Rolândia, e queria saber se vocês compram espuma e material de tapeçaria pra produção das caminhas e acessórios.\n\nTrabalho com espuma em placa e cortada sob medida, manta acrílica, tecidos e enchimentos. Entrego na região e faço preço de fábrica pra quem compra em volume.\n\nHoje vocês compram de qual fornecedor?"}, {"id": "ChIJ60wV7D9D65QRwErMrinMnbM", "empresa": "Fucinho Moda Pet", "cidade": "Londrina", "tipo": "Confecção", "whatsapp": "43996150460", "nota": 5, "avaliacoes": 7, "categoria": "Loja", "site": null, "instagram": "https://www.instagram.com/fucinho.modapet/", "obs": "", "mensagem": "Olá, tudo bem? Aqui é o Nicolas, da Rocha Decor Espumas, também de Londrina. Vi o trabalho de vocês, da Fucinho Moda Pet, aqui em Londrina mesmo, e queria saber se vocês compram espuma e material de tapeçaria pra produção das caminhas e roupinhas.\n\nTrabalho com espuma em placa e cortada sob medida, manta acrílica, tecidos e enchimentos. Entrego na região e faço preço de fábrica pra quem compra em volume.\n\nHoje vocês compram de qual fornecedor?"}, {"id": "ChIJGbCuawSd7JQRPvB0npnNro8", "empresa": "Mabuu Pet", "cidade": "Apucarana", "tipo": "Confecção", "whatsapp": "43999093813", "nota": 4.8, "avaliacoes": 5, "categoria": "Pet Shop", "site": "https://www.mabuupet.com.br/", "instagram": "https://instagram.com/mabuupet", "obs": "Marca própria com loja online. Cadastrada como pet shop, confirmar se produz.", "mensagem": "Olá, tudo bem? Aqui é o Nicolas, da Rocha Decor Espumas, aqui de Londrina. Vi o trabalho de vocês, da Mabuu Pet, aí em Apucarana, e queria saber se vocês compram espuma e material de tapeçaria pra produção das caminhas e acessórios.\n\nTrabalho com espuma em placa e cortada sob medida, manta acrílica, tecidos e enchimentos. Entrego na região e faço preço de fábrica pra quem compra em volume.\n\nHoje vocês compram de qual fornecedor?"}, {"id": "ChIJmY8dHDRH65QRIinzQvMQ2fQ", "empresa": "Pet'laine", "cidade": "Ibiporã", "tipo": "Confecção", "whatsapp": "43984586616", "nota": 5, "avaliacoes": 4, "categoria": "Loja de roupas de designer", "site": null, "instagram": null, "obs": "", "mensagem": "Olá, tudo bem? Aqui é o Nicolas, da Rocha Decor Espumas, aqui de Londrina. Vi o trabalho de vocês, da Pet'laine, aí em Ibiporã, e queria saber se vocês compram espuma e material de tapeçaria pra produção das caminhas e roupinhas.\n\nTrabalho com espuma em placa e cortada sob medida, manta acrílica, tecidos e enchimentos. Entrego na região e faço preço de fábrica pra quem compra em volume.\n\nHoje vocês compram de qual fornecedor?"}, {"id": "ChIJXxEMUGrR7JQRDWXveQQnA4Q", "empresa": "LM Mahamut Produtos Pet", "cidade": "Sarandi", "tipo": "Confecção", "whatsapp": "44988583164", "nota": 5, "avaliacoes": 4, "categoria": "Loja de suprimentos para animais de estimação", "site": null, "instagram": null, "obs": "Vende pela Shopee, confirmar se fabrica.", "mensagem": "Olá, tudo bem? Aqui é o Nicolas, da Rocha Decor Espumas, aqui de Londrina. Vi o trabalho de vocês, da LM Mahamut Produtos Pet, aí em Sarandi, e queria saber se vocês compram espuma e material de tapeçaria pra produção dos produtos pet.\n\nTrabalho com espuma em placa e cortada sob medida, manta acrílica, tecidos e enchimentos. Entrego na região e faço preço de fábrica pra quem compra em volume.\n\nHoje vocês compram de qual fornecedor?"}, {"id": "ChIJC5OfkfAh7ZQRnfbfx34GL_0", "empresa": "I.R travesseiros", "cidade": "Floresta", "tipo": "Fábrica", "whatsapp": "44999874409", "nota": 4.7, "avaliacoes": 3, "categoria": "Fabricante", "site": null, "instagram": null, "obs": "Fábrica de travesseiros, compra enchimento. Pode ter ou abrir linha pet.", "mensagem": "Olá, tudo bem? Aqui é o Nicolas, da Rocha Decor Espumas, aqui de Londrina. Vi o trabalho de vocês, da I.R Travesseiros, aí em Floresta, e queria saber se vocês compram espuma e material de tapeçaria pra produção dos travesseiros e almofadas.\n\nTrabalho com espuma em placa e cortada sob medida, manta acrílica, tecidos e enchimentos. Entrego na região e faço preço de fábrica pra quem compra em volume.\n\nHoje vocês compram de qual fornecedor?"}, {"id": "ChIJQQ4wn9XW7JQRvSyuucd-k8I", "empresa": "Sa Smart Home(ALMOFADAS DSA)", "cidade": "Maringá", "tipo": "Fábrica", "whatsapp": "44991455858", "nota": 4, "avaliacoes": 2, "categoria": "Decorador de interiores", "site": "http://www.almofadasdsa.com.br/", "instagram": null, "obs": "Fabrica almofadas, cadastrada como decoração.", "mensagem": "Olá, tudo bem? Aqui é o Nicolas, da Rocha Decor Espumas, aqui de Londrina. Vi o trabalho de vocês, da Almofadas DSA, aí em Maringá, e queria saber se vocês compram espuma e material de tapeçaria pra produção das almofadas e caminhas.\n\nTrabalho com espuma em placa e cortada sob medida, manta acrílica, tecidos e enchimentos. Entrego na região e faço preço de fábrica pra quem compra em volume.\n\nHoje vocês compram de qual fornecedor?"}, {"id": "ChIJpVxL7nBb65QRYxyzvkZEudQ", "empresa": "Bedfurpets", "cidade": "Rolândia", "tipo": "Fábrica", "whatsapp": "43998484004", "nota": 5, "avaliacoes": 1, "categoria": "Fabricante", "site": "http://www.bedfurpets.com.br/", "instagram": null, "obs": "", "mensagem": "Olá, tudo bem? Aqui é o Nicolas, da Rocha Decor Espumas, aqui de Londrina. Vi o trabalho de vocês, da Bedfurpets, aí em Rolândia, e queria saber se vocês compram espuma e material de tapeçaria pra produção das caminhas.\n\nTrabalho com espuma em placa e cortada sob medida, manta acrílica, tecidos e enchimentos. Entrego na região e faço preço de fábrica pra quem compra em volume.\n\nHoje vocês compram de qual fornecedor?"}, {"id": "ChIJgWgsFtE7k5QRtO4tBjrFnIU", "empresa": "Fábrica Almofadas Santa Fé PR", "cidade": "Santa Fé", "tipo": "Fábrica", "whatsapp": "44997495621", "nota": 5, "avaliacoes": 1, "categoria": "Cama e café", "site": null, "instagram": null, "obs": "Fábrica de almofadas, encaixa no termo almofada pet.", "mensagem": "Olá, tudo bem? Aqui é o Nicolas, da Rocha Decor Espumas, aqui de Londrina. Vi o trabalho de vocês, da Fábrica de Almofadas Santa Fé, aí em Santa Fé, e queria saber se vocês compram espuma e material de tapeçaria pra produção das almofadas e caminhas.\n\nTrabalho com espuma em placa e cortada sob medida, manta acrílica, tecidos e enchimentos. Entrego na região e faço preço de fábrica pra quem compra em volume.\n\nHoje vocês compram de qual fornecedor?"}, {"id": "ChIJJydH0n1F65QRvHO6qlFRnYs", "empresa": "Oliver Pets - Caminhas para Cães e Gatos", "cidade": "Londrina", "tipo": "Ateliê", "whatsapp": "43996508988", "nota": 5, "avaliacoes": 1, "categoria": "Loja", "site": "https://www.facebook.com/oliveerpets/", "instagram": null, "obs": "", "mensagem": "Olá, tudo bem? Aqui é o Nicolas, da Rocha Decor Espumas, também de Londrina. Vi o trabalho de vocês, da Oliver Pets, aqui em Londrina mesmo, e queria saber se vocês compram espuma e material de tapeçaria pra produção das caminhas.\n\nTrabalho com espuma em placa e cortada sob medida, manta acrílica, tecidos e enchimentos. Entrego na região e faço preço de fábrica pra quem compra em volume.\n\nHoje vocês compram de qual fornecedor?"}, {"id": "ChIJHxcjU8pLaywRiriOtxUXKZ8", "empresa": "Matilha 44", "cidade": "Paranavaí", "tipo": "Fábrica", "whatsapp": "44999833585", "nota": 0, "avaliacoes": 0, "categoria": "Fabricante", "site": "http://usematilha.com/", "instagram": null, "obs": "Fabricante de acessórios pet, confirmar se faz caminha.", "mensagem": "Olá, tudo bem? Aqui é o Nicolas, da Rocha Decor Espumas, aqui de Londrina. Vi o trabalho de vocês, da Matilha 44, aí em Paranavaí, e queria saber se vocês compram espuma e material de tapeçaria pra produção das caminhas e acessórios.\n\nTrabalho com espuma em placa e cortada sob medida, manta acrílica, tecidos e enchimentos. Entrego na região e faço preço de fábrica pra quem compra em volume.\n\nHoje vocês compram de qual fornecedor?"}, {"id": "ChIJzQCbuaDa7JQReH-VR8oCDO8", "empresa": "Hmp Caminhas E Acessórios", "cidade": "Sarandi", "tipo": "Ateliê", "whatsapp": "44999660344", "nota": 0, "avaliacoes": 0, "categoria": "Pet Shop", "site": null, "instagram": null, "obs": "", "mensagem": "Olá, tudo bem? Aqui é o Nicolas, da Rocha Decor Espumas, aqui de Londrina. Vi o trabalho de vocês, da HMP Caminhas e Acessórios, aí em Sarandi, e queria saber se vocês compram espuma e material de tapeçaria pra produção das caminhas.\n\nTrabalho com espuma em placa e cortada sob medida, manta acrílica, tecidos e enchimentos. Entrego na região e faço preço de fábrica pra quem compra em volume.\n\nHoje vocês compram de qual fornecedor?"}, {"id": "ChIJGfTv79tZ65QR-ZkCqDQrSdw", "empresa": "Super Pet Fantasias", "cidade": "Cambé", "tipo": "Confecção", "whatsapp": "43991893601", "nota": 0, "avaliacoes": 0, "categoria": "Loja de Roupa", "site": "https://www.superpetfantasias.com.br/contato", "instagram": null, "obs": "", "mensagem": "Olá, tudo bem? Aqui é o Nicolas, da Rocha Decor Espumas, aqui de Londrina. Vi o trabalho de vocês, da Super Pet Fantasias, aí em Cambé, e queria saber se vocês compram espuma e material de tapeçaria pra produção das fantasias e acessórios.\n\nTrabalho com espuma em placa e cortada sob medida, manta acrílica, tecidos e enchimentos. Entrego na região e faço preço de fábrica pra quem compra em volume.\n\nHoje vocês compram de qual fornecedor?"}, {"id": "ChIJ3WWTWULX7JQRCG_xi81XH4Y", "empresa": "Roupas pet Maringá", "cidade": "Maringá", "tipo": "Confecção", "whatsapp": "44984313572", "nota": 0, "avaliacoes": 0, "categoria": "Loja de Roupa", "site": null, "instagram": null, "obs": "", "mensagem": "Olá, tudo bem? Aqui é o Nicolas, da Rocha Decor Espumas, aqui de Londrina. Vi o trabalho de vocês, da Roupas Pet Maringá, aí em Maringá, e queria saber se vocês compram espuma e material de tapeçaria pra produção das roupinhas e caminhas.\n\nTrabalho com espuma em placa e cortada sob medida, manta acrílica, tecidos e enchimentos. Entrego na região e faço preço de fábrica pra quem compra em volume.\n\nHoje vocês compram de qual fornecedor?"}];
+const KEY = "rd-leads-pet-enviados";
+let sent = {};
+try { sent = JSON.parse(localStorage.getItem(KEY) || "{}") || {}; } catch (e) { sent = {}; }
+function saveSent(){ try { localStorage.setItem(KEY, JSON.stringify(sent)); } catch (e) {} }
+
+const $ = s => document.querySelector(s);
+const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const fmtPhone = d => `(${d.slice(0,2)}) ${d.slice(2,7)}-${d.slice(7)}`;
+
+function toast(t){
+  const el = document.createElement("div"); el.className = "toast"; el.textContent = t;
+  document.body.appendChild(el); setTimeout(() => el.remove(), 1800);
+}
+
+function fill(sel, values){
+  [...new Set(values)].sort((a,b)=>a.localeCompare(b,"pt-BR")).forEach(v => {
+    const o = document.createElement("option"); o.value = v; o.textContent = v; sel.appendChild(o);
+  });
+}
+fill($("#fCity"), LEADS.map(l => l.cidade));
+fill($("#fType"), LEADS.map(l => l.tipo));
+$("#sTotal").textContent = LEADS.length;
+
+function card(l, i){
+  const isSent = !!sent[l.id];
+  const wa = `https://wa.me/55${l.whatsapp}?text=${encodeURIComponent(l.mensagem)}`;
+  const links = [
+    l.site ? `<a href="${esc(l.site)}" target="_blank" rel="noopener">${esc(l.site.replace(/^https?:\/\/(www\.)?/,"").replace(/\/$/,"").slice(0,42))}</a>` : "",
+    l.instagram ? `<a href="${esc(l.instagram)}" target="_blank" rel="noopener">${esc("@" + l.instagram.replace(/^https?:\/\/(www\.)?instagram\.com\//,"").split(/[/?]/)[0])}</a>` : ""
+  ].filter(Boolean).join("<br>") || "<span class='note'>sem site cadastrado</span>";
+  return `<article class="card${isSent ? " sent" : ""}" data-id="${esc(l.id)}">
+    <div class="top">
+      <h2 class="name">${esc(l.empresa)}</h2>
+      <span class="rank">#${i + 1}</span>
+    </div>
+    <div class="chips">
+      <span class="chip type">${esc(l.tipo)}</span>
+      <span class="chip">${esc(l.cidade)}</span>
+      ${isSent ? '<span class="chip done">Enviado</span>' : ""}
+    </div>
+    <dl>
+      <dt>WhatsApp</dt><dd>${fmtPhone(l.whatsapp)}</dd>
+      <dt>Nota</dt><dd>${l.nota ? l.nota.toFixed(1).replace(".", ",") + " de 5" : "sem nota"}</dd>
+      <dt>Avaliações</dt><dd>${l.avaliacoes || 0}</dd>
+      <dt>Categoria</dt><dd>${esc(l.categoria || "")}</dd>
+      <dt>Site</dt><dd>${links}</dd>
+    </dl>
+    ${l.obs ? `<p class="note">${esc(l.obs)}</p>` : ""}
+    <p class="msg">${esc(l.mensagem)}</p>
+    <div class="actions">
+      <a class="btn btn-wa" href="${esc(wa)}" target="_blank" rel="noopener">Abrir WhatsApp</a>
+      <button type="button" data-act="copy">Copiar mensagem</button>
+      <button type="button" data-act="sent">${isSent ? "Desmarcar" : "Marcar enviado"}</button>
+    </div>
+  </article>`;
+}
+
+function filtered(){
+  const q = $("#q").value.trim().toLowerCase();
+  const c = $("#fCity").value, t = $("#fType").value, hide = $("#hideSent").checked;
+  return LEADS.filter(l =>
+    (!c || l.cidade === c) && (!t || l.tipo === t) && (!hide || !sent[l.id]) &&
+    (!q || [l.empresa, l.cidade, l.categoria, l.tipo].join(" ").toLowerCase().includes(q)));
+}
+
+function render(){
+  const list = filtered();
+  $("#grid").innerHTML = list.map(l => card(l, LEADS.indexOf(l))).join("");
+  $("#empty").hidden = list.length > 0;
+  $("#sShown").textContent = list.length;
+  $("#sSent").textContent = LEADS.filter(l => sent[l.id]).length;
+}
+
+async function copyText(text, fallbackEl){
+  try { await navigator.clipboard.writeText(text); return true; }
+  catch (e) {
+    if (fallbackEl) { const r = document.createRange(); r.selectNodeContents(fallbackEl); const s = getSelection(); s.removeAllRanges(); s.addRange(r); }
+    return false;
+  }
+}
+
+$("#grid").addEventListener("click", async e => {
+  const b = e.target.closest("button[data-act]"); if (!b) return;
+  const art = b.closest(".card"); const id = art.dataset.id; const l = LEADS.find(x => x.id === id);
+  if (b.dataset.act === "copy") {
+    const ok = await copyText(l.mensagem, art.querySelector(".msg"));
+    toast(ok ? "Mensagem copiada" : "Texto selecionado, use Ctrl+C");
+  } else {
+    if (sent[id]) delete sent[id]; else sent[id] = new Date().toISOString();
+    saveSent(); render();
+  }
+});
+$("#grid").addEventListener("click", e => {
+  const a = e.target.closest("a.btn-wa"); if (!a) return;
+  const id = a.closest(".card").dataset.id;
+  if (!sent[id]) { sent[id] = new Date().toISOString(); saveSent(); setTimeout(render, 300); }
+});
+["#q","#fCity","#fType","#hideSent"].forEach(s => $(s).addEventListener("input", render));
+
+function toCSV(rows){
+  const cols = ["empresa","cidade","tipo","whatsapp","nota","avaliacoes","categoria","site","instagram","enviado","mensagem"];
+  const q = v => `"${String(v ?? "").replace(/"/g,'""')}"`;
+  return "﻿" + cols.join(";") + "\n" + rows.map(l => cols.map(c =>
+    c === "enviado" ? q(sent[l.id] ? "sim" : "não") :
+    c === "whatsapp" ? q(fmtPhone(l.whatsapp)) :
+    c === "nota" ? q(l.nota ? String(l.nota).replace(".", ",") : "") : q(l[c])).join(";")).join("\n");
+}
+let downloads = null;
+(async () => { try { downloads = await window.claude?.use?.("downloads"); } catch (e) { downloads = null; } })();
+$("#exportBtn").addEventListener("click", async () => {
+  const csv = toCSV(filtered());
+  if (downloads) {
+    try { await downloads.save({ filename: "leads-caminhas-pet.csv", data: csv }); toast("CSV salvo"); return; }
+    catch (e) { if (e && e.code === "declined") return; }
+  }
+  $("#csvWrap").hidden = false; $("#csvBox").value = csv;
+  const ok = await copyText(csv, null);
+  if (!ok) { $("#csvBox").select(); }
+});
+
+render();
+</script>
+
+</body></html>
