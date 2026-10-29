@@ -1,0 +1,225 @@
+{
+  "motivo": "Removidos da prospeccao por autorizacao do usuario apos comparacao preliminar dos nomes nos prints do grupo.",
+  "removidos": [
+    {
+      "pagina": 1,
+      "numero_anterior": 5,
+      "lead": {
+        "nome": "Estofados Arthur Thomas",
+        "categoria": "Tapeçaria",
+        "telefone": "+55 43 98423-6649",
+        "whatsapp": "(43) 98423-6649",
+        "wpp_num": "5543984236649",
+        "email": "",
+        "instagram": "",
+        "site": "",
+        "cidade": "Londrina",
+        "bairro": "Rodocentro",
+        "nota": 4.5,
+        "avaliacoes": 25,
+        "tempo": "1-3 anos (est.)",
+        "obs": "SEM SITE • sem Instagram • sem e-mail público",
+        "url_maps": "https://www.google.com/maps/search/?api=1&query=Estofados%20Arthur%20Thomas&query_place_id=ChIJkefc1mtb65QRiBbDUFijfMQ",
+        "_nosite": true
+      }
+    },
+    {
+      "pagina": 1,
+      "numero_anterior": 17,
+      "lead": {
+        "nome": "Tapeçaria Monte Carlo",
+        "categoria": "Tapeçaria",
+        "telefone": "+55 43 98439-2039",
+        "whatsapp": "(43) 98439-2039",
+        "wpp_num": "5543984392039",
+        "email": "",
+        "instagram": "",
+        "site": "",
+        "cidade": "Londrina",
+        "bairro": "Monte carlo",
+        "nota": "",
+        "avaliacoes": 0,
+        "tempo": "indefinido",
+        "obs": "SEM SITE • sem Instagram • sem e-mail público • poucas avaliações (0)",
+        "url_maps": "https://www.google.com/maps/search/?api=1&query=Tape%C3%A7aria%20Monte%20Carlo&query_place_id=ChIJ9ReYwmxD65QR8ych3iFveKY",
+        "_nosite": true
+      }
+    },
+    {
+      "pagina": 1,
+      "numero_anterior": 25,
+      "lead": {
+        "nome": "Tapeçaria Tolentino",
+        "categoria": "Tapeçaria",
+        "telefone": "+55 43 98848-9763",
+        "whatsapp": "(43) 98848-9763",
+        "wpp_num": "5543988489763",
+        "email": "",
+        "instagram": "",
+        "site": "https://www.instagram.com/tapecariatolentino?igsh=MWFrcjFyZ2p1bmF3bw%3D%3D&utm_source=qr",
+        "cidade": "Londrina",
+        "bairro": "Vivi Xavier",
+        "nota": 5,
+        "avaliacoes": 38,
+        "tempo": "1-3 anos (est.)",
+        "obs": "sem Instagram • sem e-mail público • estabelecida (38 avaliações)",
+        "url_maps": "https://www.google.com/maps/search/?api=1&query=Tape%C3%A7aria%20Tolentino&query_place_id=ChIJ89bnKg9F65QRYIYKaol2Dbk",
+        "_nosite": false
+      }
+    },
+    {
+      "pagina": 1,
+      "numero_anterior": 48,
+      "lead": {
+        "nome": "Sttatu's Estofados",
+        "categoria": "Loja de sofás",
+        "telefone": "+55 43 3321-1408",
+        "whatsapp": "",
+        "wpp_num": "",
+        "email": "",
+        "instagram": "",
+        "site": "",
+        "cidade": "Londrina",
+        "bairro": "Jardim Italia",
+        "nota": 4.5,
+        "avaliacoes": 26,
+        "tempo": "1-3 anos (est.)",
+        "obs": "SEM SITE • sem Instagram • sem e-mail público",
+        "url_maps": "https://www.google.com/maps/search/?api=1&query=Sttatu's%20Estofados&query_place_id=ChIJGxE9i5RE65QRHfRIV8A-m1U",
+        "_nosite": true
+      }
+    },
+    {
+      "pagina": 1,
+      "numero_anterior": 55,
+      "lead": {
+        "nome": "Novo Ambiente Estofados",
+        "categoria": "Tapeçaria",
+        "telefone": "+55 43 3025-3760",
+        "whatsapp": "",
+        "wpp_num": "",
+        "email": "",
+        "instagram": "",
+        "site": "",
+        "cidade": "Londrina",
+        "bairro": "Alto da Boa Vista",
+        "nota": 5,
+        "avaliacoes": 7,
+        "tempo": "~1 ano (est.)",
+        "obs": "SEM SITE • sem Instagram • sem e-mail público",
+        "url_maps": "https://www.google.com/maps/search/?api=1&query=Novo%20Ambiente%20Estofados&query_place_id=ChIJmSoCXq9F65QR-fWuiNHRGJ0",
+        "_nosite": true
+      }
+    },
+    {
+      "pagina": 1,
+      "numero_anterior": 85,
+      "lead": {
+        "nome": "Estofados Santos | Fabricação e Reforma de Sofás | Tapeçaria",
+        "categoria": "Tapeçaria",
+        "telefone": "+55 43 3341-1462",
+        "whatsapp": "",
+        "wpp_num": "",
+        "email": "",
+        "instagram": "",
+        "site": "https://www.estofadossantoslondrina.com.br/",
+        "cidade": "Londrina",
+        "bairro": "Centro",
+        "nota": 5,
+        "avaliacoes": 59,
+        "tempo": "3+ anos (est.)",
+        "obs": "sem Instagram • sem e-mail público • estabelecida (59 avaliações)",
+        "url_maps": "https://www.google.com/maps/search/?api=1&query=Estofados%20Santos%20%7C%20Fabrica%C3%A7%C3%A3o%20e%20Reforma%20de%20Sof%C3%A1s%20%7C%20Tape%C3%A7aria&query_place_id=ChIJc7BD9mZD65QRL-Y7ErL1H78",
+        "_nosite": false
+      }
+    },
+    {
+      "pagina": 1,
+      "numero_anterior": 88,
+      "lead": {
+        "nome": "Tapeçaria Gonçalves",
+        "categoria": "Tapeçaria",
+        "telefone": "+55 43 3328-6949",
+        "whatsapp": "",
+        "wpp_num": "",
+        "email": "tapecaria.goncalves@hotmail.com",
+        "instagram": "",
+        "site": "https://www.tapecariagoncalves.com.br/",
+        "cidade": "Londrina",
+        "bairro": "Fugman",
+        "nota": 4.8,
+        "avaliacoes": 47,
+        "tempo": "1-3 anos (est.)",
+        "obs": "sem Instagram • estabelecida (47 avaliações)",
+        "url_maps": "https://www.google.com/maps/search/?api=1&query=Tape%C3%A7aria%20Gon%C3%A7alves&query_place_id=ChIJoU1u7NFE65QRZVGcVB8rNLU",
+        "_nosite": false
+      }
+    },
+    {
+      "pagina": 3,
+      "numero_anterior": 33,
+      "lead": {
+        "nome": "Arte'manha estofados",
+        "categoria": "Loja de sofás",
+        "telefone": "+55 (43) 99636-1359",
+        "whatsapp": "(43) 99636-1359",
+        "wpp_num": "5543996361359",
+        "email": "",
+        "instagram": "",
+        "site": "",
+        "cidade": "Cambé",
+        "bairro": "Jardim Silvino",
+        "nota": 5,
+        "avaliacoes": 4,
+        "tempo": "~1 ano (est.)",
+        "obs": "SEM SITE • sem Instagram • sem e-mail público • poucas avaliações (4)",
+        "url_maps": "https://www.google.com/maps/search/?api=1&query=Arte'manha%20estofados&query_place_id=ChIJX7fniWZb65QRRwVHSmPsPWo",
+        "_nosite": true
+      }
+    },
+    {
+      "pagina": 3,
+      "numero_anterior": 86,
+      "lead": {
+        "nome": "Edson estofados",
+        "categoria": "Tapeçaria",
+        "telefone": "+55 (43) 99989-9158",
+        "whatsapp": "(43) 99989-9158",
+        "wpp_num": "5543999899158",
+        "email": "",
+        "instagram": "",
+        "site": "https://www.instagram.com/edsonlopesestofados?igsh=czgxdXIyZnNtcWZ1",
+        "cidade": "Cambé",
+        "bairro": "Cambé",
+        "nota": 5,
+        "avaliacoes": 16,
+        "tempo": "1-3 anos (est.)",
+        "obs": "sem Instagram • sem e-mail público",
+        "url_maps": "https://www.google.com/maps/search/?api=1&query=Edson%20estofados&query_place_id=ChIJvVkGTHJb65QRSS1fX_6mmwI",
+        "_nosite": false
+      }
+    },
+    {
+      "pagina": 3,
+      "numero_anterior": 144,
+      "lead": {
+        "nome": "Tapeçaria Iguaçu",
+        "categoria": "Tapeçaria",
+        "telefone": "+55 (43) 3254-8691",
+        "whatsapp": "",
+        "wpp_num": "",
+        "email": "",
+        "instagram": "https://www.instagram.com/tapecariaiguacu/",
+        "site": "https://www.instagram.com/tapecariaiguacu/",
+        "cidade": "Cambé",
+        "bairro": "Jardim Santo Amaro",
+        "nota": 5,
+        "avaliacoes": 60,
+        "tempo": "3+ anos (est.)",
+        "obs": "sem e-mail público • estabelecida (60 aval.)",
+        "url_maps": "https://www.google.com/maps/search/?api=1&query=Tape%C3%A7aria%20Igua%C3%A7u&query_place_id=ChIJk2tNjzVa65QR-pvjkPbRwrY",
+        "_nosite": false
+      }
+    }
+  ]
+}
